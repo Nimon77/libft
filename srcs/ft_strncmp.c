@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsimon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 12:25:16 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/04 13:47:27 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/04 15:22:21 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/04 17:58:22 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 'A' && c <= 'Z')
-		return 1;
-	else if (c >= 'a' && c <= 'z')
-		return 2;
-	return 0;
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] != '\0' && s2[i] != '\0') && i < n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }

@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsimon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 13:54:19 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/04 14:01:38 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/04 15:15:17 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/04 15:22:09 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= ' ' && c <= '~')
-		return 1;
-	return 0;
+	int		i;
+	char	*here;
+
+	i = -1;
+	here = 0;
+	while (s[++i] != '\0')
+		if (s[i] == c)
+			here = (char *)&s[i];
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (here);
 }
