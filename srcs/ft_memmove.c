@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:44:54 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/06 14:30:54 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/06 11:57:05 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/06 13:03:42 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
 
-	if (dst == 0 || src == 0 || dstsize == 0)
-		return (0);
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	i = -1;
-	while (++i < dstsize - 1 && src[i] != '\0')
-		dst[i] = src[i];
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	i = 0;
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *)src;
+	if (dst > src)
+		while (i < len && (dst != 0 || src != 0))
+		{
+			ptr_dst[len - 1] = ptr_src[len - 1];
+			len--;
+		}
+	else
+		while (i < len && (dst != 0 || src != 0))
+		{
+			ptr_dst[i] = ptr_src[i];
+			i++;
+		}
+	return (dst);
 }

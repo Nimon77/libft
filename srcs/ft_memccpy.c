@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:44:54 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/06 14:30:54 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/06 11:41:56 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/06 11:56:10 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
 
-	if (dst == 0 || src == 0 || dstsize == 0)
-		return (0);
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	i = -1;
-	while (++i < dstsize - 1 && src[i] != '\0')
-		dst[i] = src[i];
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	i = 0;
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *)src;
+	while (i < n)
+	{
+		ptr_dst[i] = ptr_src[i];
+		if (ptr_src[i++] == (unsigned char)c)
+			return (&ptr_dst[i]);
+	}
+	return (0);
 }

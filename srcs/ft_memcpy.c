@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsimon <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:22:21 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/05 10:50:22 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/06 11:00:35 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/06 11:41:12 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	int		diff;
+	unsigned char *cdst;
+	unsigned char *csrc;
 
 	i = 0;
-	while (((s1[i] != '\0' && s2[i] != '\0') || i == 0) && i <= n)
+	cdst = (unsigned char *)dst;
+	csrc = (unsigned char *)src;
+	while (i < n && (dst != 0 || src != 0))
 	{
-		diff = (unsigned char)s1[i] - (unsigned char)s2[i];
-		if (diff)
-			return (diff);
+		cdst[i] = csrc[i];
 		i++;
 	}
-	return (0);
+	return (dst);
 }

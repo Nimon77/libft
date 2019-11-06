@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsimon <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:22:21 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/05 10:50:22 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/06 14:17:35 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/06 14:29:46 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char *ft_substr(const char *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	int		diff;
+	char	*newstr;
 
+	if (s == 0 || len == 0)
+		return (0);
+	if ((newstr = malloc(sizeof(*newstr) * len + 1)) == NULL)
+		return (NULL);
 	i = 0;
-	while (((s1[i] != '\0' && s2[i] != '\0') || i == 0) && i <= n)
-	{
-		diff = (unsigned char)s1[i] - (unsigned char)s2[i];
-		if (diff)
-			return (diff);
-		i++;
-	}
-	return (0);
+	while (i < len)
+		newstr[i++] = s[start++];
+	newstr[i] = '\0';
+	return (newstr);
 }
