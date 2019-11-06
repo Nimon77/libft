@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 14:32:00 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/06 17:21:38 by nsimon           ###   ########.fr       */
+/*   Created: 2019/11/06 17:29:43 by nsimon            #+#    #+#             */
+/*   Updated: 2019/11/06 17:48:28 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char		*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	len;
-	char	*newstr;
+	size_t	i;
+	size_t	set_len;
+	size_t	ptr_len;
+	char	*ptr_temp;
+	char	*ptr;
 
-	if (s1 == 0 || s2 == 0)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2) + 2;
-	if ((newstr = malloc(sizeof(*newstr) * len)) == NULL)
-		return (NULL);
-	ft_strlcpy(newstr, s1, len);
-	ft_strlcat(newstr, s2, len);
-	return (newstr);
+	set_len = ft_strlen(set);
+	ptr_temp = ft_strnstr(s1, set, set_len);
+	ptr_len = ft_strlen(ptr);
+	ft_memcpy(ptr, ptr_temp, ptr_len);
+	
+	return (ptr);
 }

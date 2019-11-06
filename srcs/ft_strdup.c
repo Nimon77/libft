@@ -6,13 +6,13 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:57:46 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/06 14:08:38 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/06 17:21:21 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	size_t	size;
 	char	*copy;

@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:00:35 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/06 11:41:12 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/06 17:20:15 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-	unsigned char *cdst;
-	unsigned char *csrc;
+	size_t			i;
+	unsigned char	*cdst;
+	unsigned char	*csrc;
 
 	i = 0;
 	cdst = (unsigned char *)dst;
