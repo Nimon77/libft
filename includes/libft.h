@@ -6,7 +6,7 @@
 /*   By: nsimon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:03:52 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/06 17:47:19 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/07 17:12:34 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	**ft_split(const char *s, const char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);

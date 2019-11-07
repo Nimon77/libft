@@ -6,7 +6,7 @@
 #    By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/14 17:40:05 by nsimon            #+#    #+#              #
-#    Updated: 2019/11/06 14:33:36 by nsimon           ###   ########.fr        #
+#    Updated: 2019/11/07 14:31:34 by nsimon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRCS	= ft_memset.c\
 		  ft_calloc.c\
 		  ft_strdup.c\
 		  ft_substr.c\
-		  ft_strjoin.c
+		  ft_strjoin.c\
+		  ft_strtrim.c\
+		  ft_split.c
 
 PRE		= ./srcs/
 
