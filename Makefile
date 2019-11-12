@@ -6,7 +6,7 @@
 #    By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/14 17:40:05 by nsimon            #+#    #+#              #
-#    Updated: 2019/11/12 10:03:41 by nsimon           ###   ########.fr        #
+#    Updated: 2019/11/12 17:38:27 by nsimon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,12 @@ SRCS	= ft_memset.c\
 		  ft_putchar_fd.c\
 		  ft_putstr_fd.c\
 		  ft_putendl_fd.c\
-		  ft_putnbr_fd.c
+		  ft_putnbr_fd.c\
+		  ft_lstnew.c\
+		  ft_lstadd_front.c\
+		  ft_lstsize.c\
+		  ft_lstlast.c\
+		  ft_lstadd_back.c
 
 PRE		= ./
 
@@ -64,7 +69,7 @@ RM		= rm -f
 .c.o:
 			${CC} ${CFLAGS} -I ${HEADERS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
