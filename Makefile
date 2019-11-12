@@ -6,7 +6,7 @@
 #    By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/14 17:40:05 by nsimon            #+#    #+#              #
-#    Updated: 2019/11/08 14:06:39 by nsimon           ###   ########.fr        #
+#    Updated: 2019/11/12 10:03:41 by nsimon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,10 @@ SRCS	= ft_memset.c\
 		  ft_split.c\
 		  ft_itoa.c\
 		  ft_strmapi.c\
-		  ft_putchar_fd.c
+		  ft_putchar_fd.c\
+		  ft_putstr_fd.c\
+		  ft_putendl_fd.c\
+		  ft_putnbr_fd.c
 
 PRE		= ./
 

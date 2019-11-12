@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:17:18 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/08 10:57:46 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/12 11:27:08 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,9 @@ char			**ft_split(const char *s, const char c)
 	while (ligne < splitlen && s[i] != '\0')
 	{
 		wordlen = ft_wordlen(s, c, i) - i + 1;
-		if (s[i] != '\0' && !ft_isinstr(c, s[i]))
+		if (s[i] != '\0' && s[i] != c)
 		{
-			if ((split[ligne] = malloc(sizeof(**split) * wordlen))
-					== NULL)
+			if ((split[ligne] = malloc(sizeof(**split) * wordlen)) == NULL)
 				return (ft_clean(split, splitlen));
 			ft_strlcpy(split[ligne++], &s[i], wordlen);
 		}

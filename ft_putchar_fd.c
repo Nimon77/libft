@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:05:29 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/08 15:41:42 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/12 09:48:39 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	int		test = 0x000000D8;
-	if ((unsigned char)c > 127)
-		write(fd, &test, 1);
-	else
-		write(fd, &c, 1);
+	write(fd, &c, 1);
 }
