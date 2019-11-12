@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 09:19:59 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/05 17:47:52 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/12 12:45:51 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_end;
 
 	i = 0;
-	while (dst[i] && i < dstsize)
+	while (dst[i] != '\0' && i < dstsize)
 		i++;
 	dst_end = i;
 	if (dstsize == 0)

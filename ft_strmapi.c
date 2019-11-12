@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 13:53:10 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/12 10:58:56 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/12 11:51:35 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char			*result;
 
 	if (s == NULL || f == NULL)
-		return NULL;
+		return (NULL);
 	i = 0;
 	s_len = ft_strlen(s);
 	if ((result = malloc(sizeof(*result) * (s_len + 1))) == NULL)

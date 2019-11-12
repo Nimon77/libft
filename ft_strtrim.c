@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 17:29:43 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/12 10:52:16 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/12 11:51:45 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char		*ft_strtrim(const char *s1, const char *set)
 
 	start = 0;
 	if (s1 == NULL || set == NULL)
-		return NULL;
+		return (NULL);
 	while (is_in(s1[start], set))
 		start++;
 	len = ft_strlen(s1);
