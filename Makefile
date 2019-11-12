@@ -6,7 +6,7 @@
 #    By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/14 17:40:05 by nsimon            #+#    #+#              #
-#    Updated: 2019/11/07 14:31:34 by nsimon           ###   ########.fr        #
+#    Updated: 2019/11/08 14:06:39 by nsimon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,15 +37,18 @@ SRCS	= ft_memset.c\
 		  ft_substr.c\
 		  ft_strjoin.c\
 		  ft_strtrim.c\
-		  ft_split.c
+		  ft_split.c\
+		  ft_itoa.c\
+		  ft_strmapi.c\
+		  ft_putchar_fd.c
 
-PRE		= ./srcs/
+PRE		= ./
 
 SRC		= ${addprefix ${PRE}, ${SRCS}}
 
 OBJS	= ${SRC:.c=.o}
 
-HEADERS	= ./includes/
+HEADERS	= ./
 
 NAME	= libft.a
 
