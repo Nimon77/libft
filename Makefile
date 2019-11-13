@@ -6,7 +6,7 @@
 #    By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/14 17:40:05 by nsimon            #+#    #+#              #
-#    Updated: 2019/11/13 14:31:29 by nsimon           ###   ########.fr        #
+#    Updated: 2019/11/13 14:44:34 by nsimon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ SRCS	= ft_memset.c\
 		  ft_lstlast.c\
 		  ft_lstadd_back.c\
 		  ft_lstdelone.c\
-		  ft_lstclear.c
+		  ft_lstclear.c\
+		  ft_lstiter.c
 
 PRE		= ./
 
