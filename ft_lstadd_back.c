@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 17:19:31 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/13 14:45:37 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/13 16:58:04 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 
 	if (alst == NULL)
 		return ;
-	tmp  = *alst;
+	tmp = *alst;
 	if (tmp == NULL)
 		*alst = new;
 	else

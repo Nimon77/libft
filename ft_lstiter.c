@@ -6,13 +6,13 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 15:42:38 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/13 15:44:25 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/13 15:44:56 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list  *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
