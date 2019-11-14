@@ -6,84 +6,82 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:17:18 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/14 12:08:57 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/14 17:17:09 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int		ft_isinstr(const char s, char to_find)
+static int	calc_split(const char *s, char c)
 {
-	if (s == to_find && s != '\0')
-		return (1);
-	return (0);
-}
-
-static int		nb_split(const char *s, const char c)
-{
-	int		i;
-	int		nb;
+	int i;
+	int split;
 
 	i = 0;
-	nb = 0;
-	while (s[i] != '\0')
+	split = 0;
+	while (s[i] == c)
+		i++;
+	while (s[i])
 	{
-		if (ft_isinstr(c, s[i]) && !(ft_isinstr(c, s[i + 1])))
-			nb++;
+		if (s[i] == c && s[i + 1] != c)
+			split++;
 		i++;
 	}
-	if (!ft_isinstr(c, s[i - 1]))
-		nb++;
-	return (nb);
+	if (s[i - 1] != c)
+		split++;
+	return (split);
 }
 
-static int		ft_wordlen(const char *s, const char c, int i)
-{
-	while (!ft_isinstr(c, s[i]) && s[i] != '\0')
-		i++;
-	return (i);
-}
-
-static void		*ft_clean(char **split, int splitlen)
+static int	calc_word(const char *s, char c)
 {
 	int	i;
 
 	i = 0;
-	while (i <= splitlen)
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	return (i);
+}
+
+static char	**error(char **split, int nb_split)
+{
+	int	i;
+
+	i = 0;
+	while (i <= nb_split)
 	{
-		if (split[i] != NULL)
+		if (split[nb_split] != NULL)
 			free(split[i]);
 		i++;
 	}
 	free(split);
+	split = NULL;
 	return (NULL);
 }
 
-char			**ft_split(const char *s, const char c)
+char		**ft_split(const char *s, char c)
 {
 	char	**split;
-	int		wordlen;
-	int		ligne;
-	int		splitlen;
 	int		i;
+	int		nb_split;
+	int		world_len;
+	int		line;
 
 	i = 0;
-	ligne = 0;
-	splitlen = nb_split(s, c);
-	if ((split = malloc(sizeof(*split) * (splitlen + 1))) == NULL)
+	line = 0;
+	nb_split = calc_split(s, c);
+	if ((split = malloc(sizeof(*split) * (nb_split + 1))) == NULL)
 		return (NULL);
-	while (ligne < splitlen && s[i] != '\0')
+	while (line < nb_split && s[i] != '\0')
 	{
-		wordlen = ft_wordlen(s, c, i) - i + 1;
-		if (s[i] != '\0' && s[i] != c)
+		world_len = calc_word(&s[i], c) + 1;
+		if (s[i] != c)
 		{
-			if ((split[ligne] = malloc(sizeof(**split) * wordlen)) == NULL)
-				return (ft_clean(split, splitlen));
-			ft_strlcpy(split[ligne++], &s[i], wordlen);
+			if ((split[line] = malloc(sizeof(**split) * world_len)) == NULL)
+				return (error(split, nb_split));
+			ft_strlcpy(split[line++], &s[i], world_len);
 		}
-		i += wordlen;
+		i += world_len;
 	}
-	split[ligne] = 0;
+	split[line] = NULL;
 	return (split);
 }

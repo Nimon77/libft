@@ -61,7 +61,7 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 																	size_t len);
 char				*ft_itoa(int n);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-char				**ft_split(const char *s, const char c);
+char				**ft_split(const char *s, char c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
