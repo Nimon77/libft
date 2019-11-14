@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:10:46 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/12 13:16:05 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/14 11:40:01 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-static int	get_return(unsigned long long ret, int neg, const char *nptr)
+static int	get_return(unsigned long long ret, int neg, const char *str)
 {
 	int count;
 
 	count = 0;
-	while (*nptr <= '1' || *nptr >= '9')
-		nptr++;
-	while (ft_isdigit(*(nptr + count)))
+	while (*str <= '1' || *str >= '9')
+		str++;
+	while (ft_isdigit(*(str + count)))
 		count++;
 	if (count >= 19)
 		return (neg == -1 ? 0 : -1);
@@ -37,7 +37,7 @@ static int	get_return(unsigned long long ret, int neg, const char *nptr)
 		return (ret * neg);
 }
 
-int			ft_atoi(const char *nptr)
+int			ft_atoi(const char *str)
 {
 	unsigned long long	ret;
 	int					len;
@@ -48,18 +48,18 @@ int			ft_atoi(const char *nptr)
 	i = -1;
 	len = 0;
 	ret = 0;
-	while (ft_isspace(*nptr))
-		nptr++;
-	while (nptr[len])
+	while (ft_isspace(*str))
+		str++;
+	while (str[len])
 		len++;
 	while (++i <= len)
 	{
-		if (ft_isdigit(nptr[i]))
-			ret = (ret * 10) + (nptr[i] - '0');
-		else if (i == 0 && (nptr[i] == '-' || nptr[i] == '+'))
-			neg = nptr[i] == '-' ? -1 : 1;
+		if (ft_isdigit(str[i]))
+			ret = (ret * 10) + (str[i] - '0');
+		else if (i == 0 && (str[i] == '-' || str[i] == '+'))
+			neg = str[i] == '-' ? -1 : 1;
 		else
-			return (get_return(ret, neg, nptr));
+			return (get_return(ret, neg, str));
 	}
-	return (get_return(ret, neg, nptr));
+	return (get_return(ret, neg, str));
 }

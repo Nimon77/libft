@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 09:19:59 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/12 12:45:51 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/14 11:20:16 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	dst_end;
+	unsigned int i;
+	unsigned int len_dst;
+	unsigned int len_src;
 
+	len_dst = 0;
+	len_src = 0;
 	i = 0;
-	while (dst[i] != '\0' && i < dstsize)
-		i++;
-	dst_end = i;
-	if (dstsize == 0)
-		return (dst_end);
-	while (src[i - dst_end] && i < dstsize - 1)
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (dstsize < len_dst)
+		return (dstsize + len_src);
+	while (src[i] != '\0' && (len_dst + i + 1) < dstsize)
 	{
-		dst[i] = src[i - dst_end];
+		dst[len_dst + i] = src[i];
 		i++;
 	}
-	if (dst_end < dstsize)
-		dst[i] = '\0';
-	return (dst_end + ft_strlen(src));
+	dst[len_dst + i] = '\0';
+	return (len_dst + len_src);
 }
