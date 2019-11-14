@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:17:18 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/14 17:17:09 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/14 18:51:30 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ char		**ft_split(const char *s, char c)
 	int		world_len;
 	int		line;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	line = 0;
 	nb_split = calc_split(s, c);
