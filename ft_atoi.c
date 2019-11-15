@@ -6,11 +6,12 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:10:46 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/15 17:19:30 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/15 17:41:09 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_isspace(char c)
 {
@@ -59,7 +60,7 @@ int			ft_atoi(const char *str)
 		else if (i == 0 && (str[i] == '-' || str[i] == '+'))
 			neg = str[i] == '-' ? -1 : 1;
 		else
-			return (get_return(ret, neg, str));
+			return (ret == 0 ? 0 : get_return(ret, neg, str));
 	}
-	return (get_return(ret, neg, str));
+	return (ret == 0 ? 0 : get_return(ret, neg, str));
 }
