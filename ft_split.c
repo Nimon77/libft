@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:17:18 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/14 18:51:30 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/15 11:14:36 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	calc_split(const char *s, char c)
 	int i;
 	int split;
 
+	if (!s)
+		return (-1);
 	i = 0;
 	split = 0;
 	while (s[i] == c)
@@ -66,11 +68,10 @@ char		**ft_split(const char *s, char c)
 	int		world_len;
 	int		line;
 
-	if (!s)
+	if ((nb_split = calc_split(s, c)) == -1)
 		return (NULL);
 	i = 0;
 	line = 0;
-	nb_split = calc_split(s, c);
 	if ((split = malloc(sizeof(*split) * (nb_split + 1))) == NULL)
 		return (NULL);
 	while (line < nb_split && s[i] != '\0')
