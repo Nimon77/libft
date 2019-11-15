@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:17:18 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/15 11:14:36 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/15 17:10:48 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	calc_split(const char *s, char c)
 
 	if (!s)
 		return (-1);
+	if (s[0] == '\0')
+		return (0);
 	i = 0;
 	split = 0;
 	while (s[i] == c)

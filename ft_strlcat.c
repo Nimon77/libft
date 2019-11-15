@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 09:19:59 by nsimon            #+#    #+#             */
-/*   Updated: 2019/11/14 11:20:16 by nsimon           ###   ########.fr       */
+/*   Updated: 2019/11/15 17:23:05 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int i;
-	unsigned int len_dst;
-	unsigned int len_src;
+	size_t i;
+	size_t len_dst;
+	size_t len_src;
 
-	len_dst = 0;
-	len_src = 0;
 	i = 0;
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
