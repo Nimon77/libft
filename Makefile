@@ -60,7 +60,7 @@ PRE		    =	./
 
 SRC			= 	${addprefix ${PRE}, ${SRCS}}
 
-BONUS_SRC	=	${addprefix ${PRE}, ${SRCS} ${BONUS_SRCS}}
+BONUS_SRC	=	${addprefix ${PRE}, ${BONUS_SRCS}}
 
 OBJS		= 	${SRC:.c=.o}
 
@@ -86,7 +86,7 @@ $(NAME):	${OBJS}
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS} ${BONUS_OBJS}
+			${RM} ${BONUS_OBJS}
 
 fclean:		clean
 			${RM} ${NAME}
